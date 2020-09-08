@@ -17,4 +17,6 @@ const persistConfig = {
 }
 const persisttedReducer = persistReducer(persistConfig, rootReducer);
 
-export const configureStore = () => createStore(persisttedReducer);
+export const configureStore = () => createStore(
+    persisttedReducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
